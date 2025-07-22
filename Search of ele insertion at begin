@@ -1,0 +1,108 @@
+#### seaechinf of element
+#insertion at begin
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class Linkedlist:
+    def __init__(self):
+        self.head=None
+    def iab(self,data):
+        new_node=Node(data) #converts data as node
+        new_node.next=self.head
+        self.head=new_node
+        print(f"{data} inserted from begin.")
+    def search(self,key):  #we are performing linear search here
+        pos=1
+        current=self.head
+        while current:
+            if current.data==key:
+                print(f"{key} found in the linkedlist  position {pos}")
+                return True
+            current=current.next
+            pos+=1
+        print(f"{key}  not found in the ll")
+        return False
+    def display(self):
+        current=self.head
+        if not current:
+            print("ll-Empty")
+            return 
+        while current:
+            print(current.data,end="--->")
+            current=current.next
+        print("None")
+ll=Linkedlist() #ll is object for class LinkedList
+while True:
+    print("\n Linked List- Insert At Begin....")
+    print("1.Insert")
+    print("2.Display")
+    print("3.Search")
+    print("3.Exit")
+    choice=input("Enter your choice:")
+    if choice=='1':
+        data=int(input("Enter A value to insert:"))
+        ll.iab(data)#insert at beginning
+    elif choice=='2':
+        ll.display()
+    elif choice=='3':
+        val=int(input("Enter the value to be search.."))
+        ll.search(val)
+    elif choice=='4':
+        print("Excited the operation...")
+        break
+    else:
+        print("Enter The Valid Choice....1/2/3/4")
+
+output:
+Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Search
+3.Exit
+Enter your choice: 1
+Enter A value to insert: 10
+10 inserted from begin.
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Search
+3.Exit
+Enter your choice: 1
+Enter A value to insert: 20
+20 inserted from begin.
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Search
+3.Exit
+Enter your choice: 1
+Enter A value to insert: 30
+30 inserted from begin.
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Search
+3.Exit
+Enter your choice: 2
+30--->20--->10--->None
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Search
+3.Exit
+Enter your choice: 3
+Enter the value to be search.. 30
+30 found in the ll in position1
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Search
+3.Exit
+Enter your choice: 4
+Excited the operation...
